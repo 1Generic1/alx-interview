@@ -52,3 +52,40 @@ if __name__ == '__main__':
             # if last row, append solution and reset all to last unfinished row
             # and last safe column in that row
             if r == n - 1:
+                solutions.append(placed_queens[:])
+                for cord in placed_queens:
+                    if cord[1] < n - 1:
+                        r = cord[0]
+                        c = cord[1]
+                for i in range(n - r):
+                    placed_queens.pop()
+                if r == n - 1 and c == n - 1:
+                    placed_queens = []
+                    stop = True
+                r -= 1
+                c += 1
+            else:
+                c = 0
+            break
+        if stop:
+            break
+        # on fail: go back to previous row
+        # and continue from last safe column + 1
+        if goback:
+            r -= 1
+            while r >= 0:
+                c = placed_queens[r][1] + 1
+                del placed_queens[r]  # delete previous queen coordinates
+                if c < n:
+                    break
+                r -= 1
+            if r < 0:
+                break
+            continue
+        r += 1
+
+    for idx, val in enumerate(solutions):
+        if idx == len(solutions) - 1:
+            print(val, end='')
+        else:
+            print(val)
