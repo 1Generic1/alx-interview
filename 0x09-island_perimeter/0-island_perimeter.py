@@ -1,4 +1,13 @@
+#!/usr/bin/python3
+"""
+this script calculates the island perimeter
+"""
+
+
 def island_perimeter(grid):
+    """
+    this script calculates the island perimeter
+    """
     perimeter = 0
     rows = len(grid)
     cols = len(grid[0])
