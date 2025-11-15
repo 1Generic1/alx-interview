@@ -63,8 +63,8 @@ def xfilter(input_file, output_file_filtered, output_file_unfiltered, keywords, 
 # Usage example
 if __name__ == "__main__":
     xfilter(
-    input_file='Agricultural-Contractors-Huntsville-AL-Companies.xlsx',
-    output_file_filtered='Tcontacts_agriculture.xlsx', 
-    output_file_unfiltered='FILES1_WITHOUT_supportinfoagriculture.xlsx',
-    keywords=['support@', 'info@', 'help@']
+    input_file='ii.xlsx',
+    output_file_filtered='ii.xlsx', 
+    output_file_unfiltered='ii.xlsx',
+    keywords=['i', 'i', 'lp@']
 )
